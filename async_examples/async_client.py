@@ -20,10 +20,6 @@ async def new_message(data):
     print(f"data: {data}")
     return data
 
-@sio.event
-async def notifications(data):
-    print(f"notifications: {data}")
-    return data
     
 async def main():
     token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmYyMTRjNTUtMWNkNC00YmM1LTg0MWQtZjFjMmQ2NmZkODcxIiwidG9rZW5faWQiOiI0YjcyODI3MS04MWJhLTQ5NTUtOWYxMi0wNjgxNzNiMGQ1ZTMifQ.NR2RJ-qI-6e8O80X92HdXe1m0zS8dNmj3M7y4DdYu8w"
