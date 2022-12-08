@@ -14,11 +14,13 @@ app = FastAPI(
 )
 
 
-sio = socketio.AsyncServer(async_mode="asgi")
+sio = socketio.AsyncServer(
+        async_mode="asgi"
+        )
 sio_app = socketio.ASGIApp(sio)
 
 
-app.mount("/ws", sio_app)
+app.mount("/", sio_app)
 
 @sio.event
 async def connect(sid, environ):
@@ -37,8 +39,6 @@ async def send_message(sid, data):
     print({f"session id for sender {sender}: {sid}"})
 
     print(f"message is: {message}")
-
-
 
 
 if __name__ == "__main__":
